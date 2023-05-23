@@ -1,0 +1,136 @@
+@import "src/assets/style/global";
+
+.theHeader {
+  background: $dark;
+  color: $white;
+  font-weight: $font-weight-bold;
+  z-index: $zindex-sticky;
+  position: fixed;
+  top: 0;
+  inset-inline-start: 0;
+  inset-inline-end: 0;
+  &-container {
+    height: rem(80px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include media-breakpoint-down(md) {
+      height: rem(60px);
+      overflow-x: clip;
+    }
+  }
+
+  &-nav {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 rem(-15px);
+    display: flex;
+    align-items: center;
+    height: 100%;
+    @include media-breakpoint-down(xl) {
+      margin: 0 rem(-8px);
+    }
+    > li {
+      padding: 0 rem(15px);
+      position: relative;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      flex: 1;
+      @include media-breakpoint-down(xl) {
+        padding: 0 rem(8px);
+      }
+      > a {
+        display: flex;
+        align-items: center;
+        transition: 0.2s ease-in-out;
+        &:not(.btn) {
+          &:hover {
+            color: $primary;
+          }
+        }
+        &.btn {
+          background: $dark;
+          color: $white;
+          padding: rem(10px) rem(16px);
+          &:hover {
+            background: $primary;
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+
+  .border-right
+  {
+    border-right: 2px solid #03b7ef;
+  }
+
+  &-mobile {
+    display: none;
+    position: fixed;
+    z-index: $zindex-fixed;
+    bottom: 0;
+    inset-inline-start: 0;
+    inset-inline-end: 0;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    justify-content: space-around;
+    height: rem(60px);
+    text-align: center;
+    background: $white;
+    box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.08);
+    @include media-breakpoint-down(lg) {
+      display: flex;
+    }
+    > li {
+      > a {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        font-size: rem(12px);
+      }
+    }
+  }
+
+  &--fixed {
+    transition: transform 0.25s ease-in-out, background 0.25s ease-in-out,
+      top 0.25s ease-in-out;
+    will-change: transform;
+  }
+  &--unpinned {
+    transform: translateY(-100%);
+  }
+  &--pinned {
+    transform: translateY(0);
+  }
+
+
+}
+
+
+@media (max-width:992px)
+{
+  span , span i
+  {
+    font-size: 14px;
+  }
+  span
+  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width:768px)
+{
+  span , span i
+  {
+    font-size: 9px;
+  }
+}

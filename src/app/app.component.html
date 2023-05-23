@@ -1,0 +1,36 @@
+<div class="theApp">
+  <app-header
+    [navbarIcons]="data?.navbar_icons"
+  ></app-header>
+  <!-- <ng-progress #progressBar></ng-progress> -->
+  <div class="theApp-main">
+    <!-- <router-outlet></router-outlet> -->
+    <app-best-clean
+      [sliderTitle]="data?.slider_title"
+      [sliderElements]="data?.slider_elements"
+    ></app-best-clean>
+    <app-cleaning-services
+      [services]="data?.services"
+    ></app-cleaning-services>
+    <!-- <app-building-services></app-building-services>
+    <app-laundry-services></app-laundry-services> -->
+    <app-our
+      [leftSectionTitle]="data?.left_section_title"
+      [leftSectionDescription]="data?.left_section_description"
+      [rightSectionTitle]="data?.right_section_title"
+      [rightSectionDescripiton]="data?.right_section_descripiton"
+    ></app-our>
+    <app-value
+      [lastSectionTitle]="data?.last_section_title"
+      [lastSectionDescription]="data?.last_section_description"
+    ></app-value>
+    <app-footer
+      [footerLogoPath]="data?.footer_logo_path"
+      [footerTitle]="data?.footer_title"
+      [footerDescription]="data?.footer_description"
+      [footerIcons]="data?.footer_icons"
+    ></app-footer>
+  </div>
+  <!-- <app-footer></app-footer>
+  <app-sidebar *ngIf="SidebarService.active"></app-sidebar> -->
+</div>

@@ -1,0 +1,65 @@
+<section class="pt-xl pb-lg position-relative">
+
+    <div class="container d-flex flex-column justify-content-center align-items-center">
+      <!-- <swiper [slidesPerView]="1" [spaceBetween]="10" [scrollbar]="{ draggable: true }" class="w-100">
+
+      <ng-template swiperSlide class="text-center">
+        <img style="width: 85%;" class="rounded-5"  src="assets/images/washing-machine-4124121.jpg">
+      </ng-template>
+      <ng-template swiperSlide class="text-center">
+        <img style="width: 85%;" class="rounded-5"  src="assets/images/washing-machine-7741655.jpg">
+      </ng-template>
+
+     </swiper> -->
+
+     <swiper [slidesPerView]="1" [spaceBetween]="10" [scrollbar]="{ draggable: true }" class="w-100">
+      <ng-container *ngFor="let element of sliderElements">
+        <ng-template [swiperSlide]>
+          <!-- Image template -->
+          <img
+            *ngIf="element.type === 'img'"
+            style="width: 85%;"
+            class="rounded-5"
+            [src]="'https://back-landing.genral.net/' + element.path"
+          >
+
+          <!-- Video template -->
+          <iframe
+            *ngIf="element.type === 'youtube_video'"
+            src="https://www.youtube.com/embed/gLs74IjS0H4"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            class='w-100'
+            width="560"
+            height="600"
+          ></iframe>
+        </ng-template>
+      </ng-container>
+    </swiper>
+
+
+
+
+
+     <p class="fs-1 pt-sm">{{sliderTitle}}</p>
+    </div>
+
+
+
+    <div class="shape">
+      <img src="../../../assets/images/bottom-right.png" class="shape-bottom-right" alt="img image png">
+    </div>
+
+    <div class="shape">
+      <img src="../../../assets/images/bottom-left.png" class="shape-bottom-left" alt="img image png">
+    </div>
+
+
+    <div class="shape">
+      <img src="../../../assets/images/top-left.png" class="shape-top-left" alt="img image png">
+    </div>
+
+    <div class="shape">
+      <img src="../../../assets/images/top-right.png" class="shape-top-right" alt="img image png">
+    </div>
+</section>

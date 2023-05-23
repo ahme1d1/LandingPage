@@ -1,0 +1,19 @@
+@import "src/assets/style/global";
+
+.theApp-main {
+  width: 100%;
+  min-height: calc(100vh - 134px);
+  padding-top: rem(80px);
+  @include media-breakpoint-down(md) {
+    padding-top: rem(60px);
+  }
+  &-background {
+    background: #D6E3EC;
+  }
+}
+
+.theApp {
+  @include media-breakpoint-down(lg) {
+    padding-bottom: rem(40px);
+  }
+}

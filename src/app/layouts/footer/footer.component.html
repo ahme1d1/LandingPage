@@ -1,0 +1,37 @@
+<section class="pt-xl pb-lg d-flex flex-column justify-content-center align-items-center position-relative">
+
+  <img [src]="'https://back-landing.genral.net/' + footerLogoPath" alt="img" style="width: 15%;">
+  <h1>{{footerTitle}}</h1>
+  <p class="text-white">{{footerDescription}}</p>
+
+  <div class="w-50 d-flex justify-content-around align-items-center mt-sm">
+    <ng-container *ngFor="let icon of footerIcons">
+      <a [href]="icon?.link" target="_blank">
+        <img
+          [src]="'https://back-landing.genral.net/' + icon?.img_path"
+          alt="Icon"
+          width="90"
+          height="90"
+        >
+      </a>
+    </ng-container>
+
+
+
+    <!-- <i class="fa-brands fa-whatsapp fa-2x text-white"></i>
+    <i class="fa-solid fa-phone fa-2x text-white"></i>
+    <i class="fa-solid fa-location-dot fa-2x text-white"></i>
+    <i class="fa-brands fa-instagram fa-2x text-white"></i>
+    <i class="fa-brands fa-tiktok fa-2x text-white"></i> -->
+  </div>
+
+
+  <div class="shape">
+    <img src="../../../assets/images/bg-bottom-right.png" class="shape-bottom-right" alt="img image png">
+  </div>
+
+  <div class="shape">
+    <img src="../../../assets/images/bg-bottom-left.png" class="shape-bottom-left" alt="img image png">
+  </div>
+
+</section>
