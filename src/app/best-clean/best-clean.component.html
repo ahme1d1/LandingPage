@@ -1,4 +1,4 @@
-<section class="pt-xl pb-lg position-relative">
+<section class="pt-lg pb-lg position-relative">
 
     <div class="container d-flex flex-column justify-content-center align-items-center">
       <!-- <swiper [slidesPerView]="1" [spaceBetween]="10" [scrollbar]="{ draggable: true }" class="w-100">
@@ -12,38 +12,31 @@
 
      </swiper> -->
 
-     <swiper [slidesPerView]="1" [spaceBetween]="10" [scrollbar]="{ draggable: true }" class="w-100">
+    <swiper [slidesPerView]="1" [spaceBetween]="10" [pagination]="true" [scrollbar]="{ draggable: true }" class="w-100">
       <ng-container *ngFor="let element of sliderElements">
         <ng-template [swiperSlide]>
           <!-- Image template -->
-          <img
-            *ngIf="element.type === 'img'"
-            style="width: 85%;"
-            class="rounded-5"
-            [src]="'https://back-landing.genral.net/' + element.path"
-          >
+          <div class="slider-image">
+            <img
+              *ngIf="element.type === 'img'"
+              class="rounded-5 slider-image-main w-100"
+              [src]="'https://back-landing.genral.net/' + element.path"
+            >
+            <iframe
+              *ngIf="element.type === 'youtube_video'"
+              src="https://www.youtube.com/embed/gLs74IjS0H4"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              class='w-100 slider-image-main'
+            ></iframe>
+          </div>
 
-          <!-- Video template -->
-          <iframe
-            *ngIf="element.type === 'youtube_video'"
-            src="https://www.youtube.com/embed/gLs74IjS0H4"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-            class='w-100'
-            width="560"
-            height="600"
-          ></iframe>
         </ng-template>
       </ng-container>
     </swiper>
 
-
-
-
-
-     <p class="fs-1 pt-sm">{{sliderTitle}}</p>
+    <p class="fs-1 pt-sm">{{sliderTitle}}</p>
     </div>
-
 
 
     <div class="shape">

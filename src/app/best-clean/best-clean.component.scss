@@ -56,4 +56,87 @@
     }
   }
 }
+.slider-image {
+  position: relative;
+  &-header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    padding: 2rem 4rem;
+    opacity: 0;
+    transition: 0.3s ease-in;
+    text-align: center;
+    img {
+      object-fit: contain;
+      @media (min-width: 1200px) and (max-width: 1400px) {
+        width: rem(260px);
+        height: rem(460px);
+      }
+      @media (min-width: 990px) and (max-width: 1200px) {
+        width: rem(200px);
+        height: rem(390px);
+      }
+      @media (min-width: 576px) and (max-width: 990px) {
+        width: rem(245px);
+        height: rem(460px);
+      }
+      @media (max-width: 576px) {
+        width: 100%;
+        height: 120%;
+      }
+    }
+  }
+  &:hover {
+    .slider-image-header {
+      transform: translateY(-110px);
+      opacity: 1;
+    }
+  }
+  &-padding {
+    margin-bottom: rem(35px);
+  }
+}
+
+::ng-deep .slider-image-main {
+  img, iframe {
+    object-fit: contain !important;
+  }
+}
+
+::ng-deep .imageSlider {
+  .swiper-slide {
+    margin-top: 110px !important;
+    height: 500px;
+  }
+}
+
+
+.swiper-overide {
+  @include media-breakpoint-up(md) {
+    position: relative;
+    .swiper-container {
+      position: static !important;
+    }
+  }
+}
+
+::ng-deep .swiper-button-prev {
+  @include media-breakpoint-up(md) {
+    right: -8% !important;
+  }
+}
+
+::ng-deep .swiper-button-next {
+  @include media-breakpoint-up(md) {
+    left: -8% !important;
+  }
+}
+.slider-image-main {
+  height: 600px;
+  @include media-breakpoint-down(md) {
+    height: 300px;
+  }
+}
 

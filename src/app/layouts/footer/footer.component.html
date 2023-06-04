@@ -1,4 +1,4 @@
-<section class="pt-xl pb-lg d-flex flex-column justify-content-center align-items-center position-relative">
+<section class="pt-lg pb-lg d-flex flex-column justify-content-center align-items-center position-relative">
 
   <img [src]="'https://back-landing.genral.net/' + footerLogoPath" alt="img" style="width: 15%;">
   <h1>{{footerTitle}}</h1>
@@ -10,8 +10,9 @@
         <img
           [src]="'https://back-landing.genral.net/' + icon?.img_path"
           alt="Icon"
-          width="90"
-          height="90"
+          width="60"
+          height="60"
+          style="object-fit: cover;"
         >
       </a>
     </ng-container>

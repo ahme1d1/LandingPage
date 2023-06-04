@@ -1,13 +1,12 @@
-.card-body
-{
+@import "src/assets/style/global";
+
+.card-body {
   background-image: url("../../assets/images/Rectangle.png");
   background-position: center center;
 }
 
-h2::after
-{
+h2::after {
   content: "";
-
   display: block;
   width: 100%;
   height: 2px;
@@ -15,4 +14,21 @@ h2::after
   background-color: #03b7ef;
 }
 
-h2 , h5 { text-shadow: 3px 3px 20px #03b7ef, -2px 1px 30px #03b7ef; }
+h2 , h5 {
+  text-shadow: 3px 3px 20px #03b7ef, -2px 1px 30px #03b7ef;
+}
+
+
+.card-img-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  // @include media-breakpoint-down(lg) {
+  //   width: 40%;
+  // }
+  // @include media-breakpoint-down(md) {
+  //   width: 35%;
+  // }
+}
