@@ -133,10 +133,14 @@
     left: -8% !important;
   }
 }
+
 .slider-image-main {
   height: 600px;
   @include media-breakpoint-down(md) {
     height: 300px;
+  }
+  @include media-breakpoint-down(sm) {
+    height: 250px;
   }
 }
 

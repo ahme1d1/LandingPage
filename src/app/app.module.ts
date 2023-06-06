@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CleaningServicesComponent } from './cleaning-services/cleaning-services.component';
@@ -24,7 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
     OurComponent,
     FooterComponent,
     HeaderComponent,
-    BestCleanComponent,
+    BestCleanComponent
   ],
   imports: [
     BrowserModule,

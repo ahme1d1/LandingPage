@@ -10,5 +10,4 @@ export class FooterComponent {
   @Input() footerTitle!: any;
   @Input() footerDescription!: any;
   @Input() footerIcons!: any;
-
 }

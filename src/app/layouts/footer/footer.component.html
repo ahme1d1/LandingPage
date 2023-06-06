@@ -1,29 +1,21 @@
 <section class="pt-lg pb-lg d-flex flex-column justify-content-center align-items-center position-relative">
 
   <img [src]="'https://back-landing.genral.net/' + footerLogoPath" alt="img" style="width: 15%;">
-  <h1>{{footerTitle}}</h1>
-  <p class="text-white">{{footerDescription}}</p>
+  <h1 class="text-center">{{footerTitle}}</h1>
+  <p class="text-white text-center">{{footerDescription}}</p>
 
-  <div class="w-50 d-flex justify-content-around align-items-center mt-sm">
+  <div class="w-50 d-flex justify-content-around align-items-center mt-sm position-relative" style="z-index: 1;">
     <ng-container *ngFor="let icon of footerIcons">
       <a [href]="icon?.link" target="_blank">
         <img
           [src]="'https://back-landing.genral.net/' + icon?.img_path"
           alt="Icon"
-          width="60"
-          height="60"
+          width="40"
+          height="40"
           style="object-fit: cover;"
         >
       </a>
     </ng-container>
-
-
-
-    <!-- <i class="fa-brands fa-whatsapp fa-2x text-white"></i>
-    <i class="fa-solid fa-phone fa-2x text-white"></i>
-    <i class="fa-solid fa-location-dot fa-2x text-white"></i>
-    <i class="fa-brands fa-instagram fa-2x text-white"></i>
-    <i class="fa-brands fa-tiktok fa-2x text-white"></i> -->
   </div>
 
 

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { AppService } from './app.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +8,12 @@ import { AppService } from './app.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'LandingPage';
   data: any;
-  constructor(private appService: AppService) {}
+  constructor(
+    private appService: AppService,
+    private titleService: Title,
+    private renderer: Renderer2
+  ) {}
 
   ngOnInit(): void {
     this.loadData()
@@ -18,7 +22,18 @@ export class AppComponent implements OnInit {
   loadData() {
     this.appService.getData().subscribe((res) => {
       this.data = res.data;
-      console.log(res.data)
-    })
+      this.titleService.setTitle(res.data.footer_title);
+      this.setFavicon(`https://back-landing.genral.net/${res.data.footer_logo_path}`);
+    });
+  }
+
+  setFavicon(faviconPath: string) {
+    const link: HTMLLinkElement = this.renderer.createElement('link');
+    link.rel = 'icon';
+    link.type = 'image/png';
+    link.href = faviconPath;
+
+    const head: HTMLHeadElement = document.head;
+    head.appendChild(link);
   }
 }
