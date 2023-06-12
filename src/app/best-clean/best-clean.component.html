@@ -1,16 +1,6 @@
 <section class="pt-lg pb-lg position-relative">
 
     <div class="container d-flex flex-column justify-content-center align-items-center">
-      <!-- <swiper [slidesPerView]="1" [spaceBetween]="10" [scrollbar]="{ draggable: true }" class="w-100">
-
-      <ng-template swiperSlide class="text-center">
-        <img style="width: 85%;" class="rounded-5"  src="assets/images/washing-machine-4124121.jpg">
-      </ng-template>
-      <ng-template swiperSlide class="text-center">
-        <img style="width: 85%;" class="rounded-5"  src="assets/images/washing-machine-7741655.jpg">
-      </ng-template>
-
-     </swiper> -->
 
     <swiper [slidesPerView]="1" [spaceBetween]="10" [pagination]="true" [scrollbar]="{ draggable: true }" class="w-100">
       <ng-container *ngFor="let element of sliderElements">
@@ -20,7 +10,7 @@
             <img
               *ngIf="element.type === 'img'"
               class="rounded-5 slider-image-main w-100"
-              [src]="'https://back-landing.genral.net/' + element.path"
+              [src]="'https://test.back-landing.genral.net/' + element.path"
             >
             <iframe
               *ngIf="element.type === 'youtube_video'"
@@ -35,7 +25,11 @@
       </ng-container>
     </swiper>
 
-    <p class="fs-1 pt-sm text-center">{{sliderTitle}}</p>
+    <p class="fs-1 pt-sm text-center" [ngStyle]="{ color: fontColor }">
+      {{currentLang == 'en' ? sliderTitle : sliderTitleAr}}
+    </p>
+
+
     </div>
 
 

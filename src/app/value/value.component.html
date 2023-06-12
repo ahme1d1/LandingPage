@@ -1,8 +1,7 @@
 
 <section class="pt-lg pb-lg">
-
   <div class="container pt-lg pb-lg d-flex flex-column justify-content-center align-items-center">
-    <h2>{{lastSectionTitle}}</h2>
-    <p class="text-center">{{lastSectionDescription}}</p>
+    <h2 [ngStyle]="{ color: fontColor }">{{currentLang == 'en' ? lastSectionTitle : lastSectionTitleAr}}</h2>
+    <p class="text-center" [ngStyle]="{ color: fontColor }">{{currentLang == 'en' ? lastSectionDescription : lastSectionDescriptionAr}}</p>
   </div>
 </section>

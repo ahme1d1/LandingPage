@@ -4,13 +4,35 @@
       <li *ngFor="let icon of navbarIcons" class="border-right">
         <a [href]="icon?.link" target="_blank" class="theHeader__icons">
           <img
-            [src]="'https://back-landing.genral.net/' + icon?.img_path"
+            [src]="'https://test.back-landing.genral.net/' + icon?.img_path"
             alt="Icon"
             width="40"
             height="40"
             style="object-fit: cover;"
           >
-          <span class="text-center">{{icon?.title}}</span>
+          <span class="text-center" [ngStyle]="{ color: navbarColor }">{{icon?.title}}</span>
+        </a>
+      </li>
+      <li class="border-right">
+        <a href="javascript:void(0)" class="theHeader__icons" title="English" (click)="changeLangage('ar')" *ngIf="currentLang == 'en'">
+          <img
+            src="assets/images/lang.svg"
+            alt="Icon"
+            width="40"
+            height="40"
+            style="object-fit: cover;"
+          >
+          <span [ngStyle]="{ color: navbarColor }">Ar</span>
+        </a>
+        <a href="javascript:void(0)" class="theHeader__icons" title="العربية" (click)="changeLangage('en')" *ngIf="currentLang == 'ar'">
+          <img
+            src="assets/images/lang.svg"
+            alt="Icon"
+            width="40"
+            height="40"
+            style="object-fit: cover;"
+          >
+          <span [ngStyle]="{ color: navbarColor }">En</span>
         </a>
       </li>
     </ul>

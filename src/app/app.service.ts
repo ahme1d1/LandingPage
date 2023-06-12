@@ -10,7 +10,7 @@ export class AppService {
   constructor(private http: HttpClient) { }
 
   getData(): Observable<any> {
-    return this.http.get<any>('https://back-landing.genral.net/api/client/home_page')
+    return this.http.get<any>('https://test.back-landing.genral.net/api/client/home_page')
   }
 
 }

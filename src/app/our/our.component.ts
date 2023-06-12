@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-our',
@@ -10,5 +11,16 @@ export class OurComponent {
   @Input() leftSectionDescription!: any;
   @Input() rightSectionTitle!: any;
   @Input() rightSectionDescripiton!: any;
+  @Input() leftSectionTitleAr!: any;
+  @Input() leftSectionDescriptionAr!: any;
+  @Input() rightSectionTitleAr!: any;
+  @Input() rightSectionDescripitonAr!: any;
+  @Input() fontColor!: any;
+  
+  constructor(private translateService: TranslateService) {}
+
+  get currentLang(): string {
+    return this.translateService.getDefaultLang();
+  }
 
 }

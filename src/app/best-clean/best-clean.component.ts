@@ -1,4 +1,5 @@
 import { Component , Input, ViewEncapsulation } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 // import Swiper core and required modules
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y   } from 'swiper';
@@ -16,6 +17,10 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y ]);
 export class BestCleanComponent {
   @Input() sliderElements!: any[];
   @Input() sliderTitle!: any;
+  @Input() sliderTitleAr!: any;
+  @Input() fontColor!: any;
+
+  constructor(private translateService: TranslateService) {}
 
   fullSliderConfig: any = {
     spaceBetween: 16,
@@ -49,4 +54,8 @@ export class BestCleanComponent {
       },
     }
   };
+
+  get currentLang(): string {
+    return this.translateService.getDefaultLang();
+  }
 }

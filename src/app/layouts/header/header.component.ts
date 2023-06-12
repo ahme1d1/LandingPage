@@ -1,4 +1,5 @@
 import { Component , Input, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import * as Headroom from 'headroom.js';
 
 @Component({
@@ -7,7 +8,11 @@ import * as Headroom from 'headroom.js';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  @Input() navbarIcons!: any[]
+  @Input() navbarIcons!: any[];
+  @Input() navbarColor!: any;
+
+  constructor(private translateService: TranslateService) {}
+
   ngOnInit() {
     this.initHeadRoom();
   }
@@ -36,6 +41,15 @@ export class HeaderComponent implements OnInit {
       },
     });
     headroom.init();
+  }
+
+  changeLangage(lang: string) {
+    localStorage.setItem('lang', lang);
+    window.location.reload();
+  }
+
+  get currentLang(): string {
+    return this.translateService.getDefaultLang();
   }
 
 }

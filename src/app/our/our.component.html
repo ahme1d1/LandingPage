@@ -5,12 +5,12 @@
 
     <div class="row">
       <div class="col-6 d-flex flex-column justify-content-center align-items-center border-right">
-        <h2>{{leftSectionTitle}}</h2>
-        <p class=" text-center text-white">{{leftSectionDescription}}</p>
+        <h2 [ngStyle]="{ color: fontColor }">{{currentLang == 'en' ? leftSectionTitle : leftSectionTitleAr}}</h2>
+        <p class=" text-center text-white" [ngStyle]="{ color: fontColor }">{{currentLang == 'en' ? leftSectionDescription : leftSectionDescriptionAr}}</p>
       </div>
       <div class="col-6 d-flex flex-column justify-content-center align-items-center">
-        <h2>{{rightSectionTitle}}</h2>
-        <p class="text-center text-white">{{rightSectionDescripiton}}</p>
+        <h2>{{currentLang == 'en' ? rightSectionTitle : rightSectionTitleAr}}</h2>
+        <p class="text-center text-white" [ngStyle]="{ color: fontColor }">{{currentLang == 'en' ? rightSectionDescripiton : rightSectionDescripitonAr}}</p>
       </div>
     </div>
   </div>

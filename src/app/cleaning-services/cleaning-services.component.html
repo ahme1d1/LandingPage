@@ -1,80 +1,18 @@
-<!-- <section class="pt-xl pb-lg">
-  <div class="container d-flex flex-column justify-content-center align-items-center">
-
-
-
-    <h2 class="mb-md">Cleaning Services</h2>
-
-    <p class="text-center">General House Services is one of the most prominent public services companies that are distinguished by providing the desired service to the customer on demand in Dubai.
-      Which is characterized by the rapid performance of tasks with perfection by a team of trained and qualified workers to complete all services to the fullest </p>
-
-      <div class="row">
-
-        <div class="col-6 mb-sm">
-          <img class="card-img-top" src="./assets/images/Content.png" class="w-100 text-center" alt="Card image cap">
-          <div class="card-body d-flex justify-content-center align-items-center p-sm">
-            <h5 class="card-title text-center">Sofa Cleaning</h5>
-          </div>
-        </div>
-
-        <div class="col-6 mb-sm">
-          <img class="card-img-top" src="./assets/images/Content.png" class="w-100 text-center" alt="Card image cap">
-          <div class="card-body d-flex justify-content-center align-items-center p-sm">
-            <h5 class="card-title text-center">Sofa Cleaning</h5>
-          </div>
-        </div>
-
-        <div class="col-6 mb-sm">
-          <img class="card-img-top" src="./assets/images/Content.png" class="w-100 text-center" alt="Card image cap">
-          <div class="card-body d-flex justify-content-center align-items-center p-sm">
-            <h5 class="card-title text-center">Sofa Cleaning</h5>
-          </div>
-        </div>
-
-        <div class="col-6 mb-sm">
-          <img class="card-img-top" src="./assets/images/Content.png" class="w-100 text-center" alt="Card image cap">
-          <div class="card-body d-flex justify-content-center align-items-center p-sm">
-            <h5 class="card-title text-center">Sofa Cleaning</h5>
-          </div>
-        </div>
-
-        <div class="col-6">
-          <img class="card-img-top" src="./assets/images/Content.png" class="w-100 text-center" alt="Card image cap">
-          <div class="card-body d-flex justify-content-center align-items-center p-sm">
-            <h5 class="card-title text-center">Sofa Cleaning</h5>
-          </div>
-        </div>
-
-        <div class="col-6">
-          <img class="card-img-top" src="./assets/images/Content.png" class="w-100 text-center" alt="Card image cap">
-          <div class="card-body d-flex justify-content-center align-items-center p-sm">
-            <h5 class="card-title text-center">Sofa Cleaning</h5>
-          </div>
-        </div>
-
-
-
-
-
-
-      </div>
-  </div>
-</section> -->
-
-
 <section class="pt-lg pb-lg" *ngFor="let service of services">
   <div class="container text-center">
-    <h2 class="mb-md d-inline-block">{{ service.title }}</h2>
-    <p class="text-center">{{ service.description }}</p>
+    <h2 class="mb-md d-inline-block" [ngStyle]="{ color: fontColor }">
+      {{currentLang == 'en' ? service.title : service.title_ar}}
+    </h2>
+    <p class="text-center" [ngStyle]="{ color: fontColor }">{{currentLang == 'en' ? service.description : service.description_ar}}</p>
     <div class="row">
       <div class="col-6 mb-sm" *ngFor="let video of service?.videos">
         <a [href]="video?.link" target="_blank" style="text-decoration: underline;">
           <div class=" position-relative">
             <img src="assets/images/play.png" class="card-img-button" alt="play button">
-            <img class="card-img-top" [src]="'https://back-landing.genral.net/' + video?.img_path" class="w-100" alt="Card image cap">
+            <img class="card-img-top" style="max-width: 100%;" [src]="'https://test.back-landing.genral.net/' + video?.img_path" class="w-100" alt="Card image cap">
           </div>
           <div class="card-body d-flex justify-content-center align-items-center p-sm">
-            <h5 class="card-title text-center">{{video?.title}}</h5>
+            <h5 class="card-title text-center" [ngStyle]="{ color: fontColor }">{{currentLang == 'en' ? video?.title : video?.title_ar}}</h5>
           </div>
         </a>
 

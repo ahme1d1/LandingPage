@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-value',
@@ -8,4 +9,14 @@ import { Component, Input } from '@angular/core';
 export class ValueComponent {
   @Input() lastSectionTitle!: any;
   @Input() lastSectionDescription!: any;
+  @Input() lastSectionTitleAr!: any;
+  @Input() lastSectionDescriptionAr!: any;
+  @Input() fontColor!: any;
+  
+  constructor(private translateService: TranslateService) {}
+
+  get currentLang(): string {
+    return this.translateService.getDefaultLang();
+  }
+
 }

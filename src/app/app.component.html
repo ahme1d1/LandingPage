@@ -1,32 +1,45 @@
 <div class="theApp">
   <app-header
     [navbarIcons]="data?.navbar_icons"
+    [navbarColor]="data?.navbar_color"
   ></app-header>
   <div class="theApp-main">
     <app-best-clean
       [sliderTitle]="data?.slider_title"
+      [sliderTitleAr]="data?.slider_title_ar"
       [sliderElements]="data?.slider_elements"
+      [fontColor]="data?.font_color"
     ></app-best-clean>
     <app-cleaning-services
       [services]="data?.services"
+      [fontColor]="data?.font_color"
     ></app-cleaning-services>
-    <!-- <app-building-services></app-building-services>
-    <app-laundry-services></app-laundry-services> -->
     <app-our
       [leftSectionTitle]="data?.left_section_title"
       [leftSectionDescription]="data?.left_section_description"
       [rightSectionTitle]="data?.right_section_title"
       [rightSectionDescripiton]="data?.right_section_descripiton"
+      [leftSectionTitleAr]="data?.left_section_title_ar"
+      [leftSectionDescriptionAr]="data?.left_section_description_ar"
+      [rightSectionTitleAr]="data?.right_section_title_ar"
+      [rightSectionDescripitonAr]="data?.right_section_descripiton_ar"
+      [fontColor]="data?.font_color"
     ></app-our>
     <app-value
       [lastSectionTitle]="data?.last_section_title"
       [lastSectionDescription]="data?.last_section_description"
+      [lastSectionTitleAr]="data?.last_section_title_ar"
+      [lastSectionDescriptionAr]="data?.last_section_description_ar"
+      [fontColor]="data?.font_color"
     ></app-value>
     <app-footer
       [footerLogoPath]="data?.footer_logo_path"
       [footerTitle]="data?.footer_title"
       [footerDescription]="data?.footer_description"
+      [footerTitleAr]="data?.footer_title_ar"
+      [footerDescriptionAr]="data?.footer_description_ar"
       [footerIcons]="data?.footer_icons"
+      [fontColor]="data?.font_color"
     ></app-footer>
   </div>
 </div>
