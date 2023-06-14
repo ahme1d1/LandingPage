@@ -2,51 +2,50 @@
 
     <div class="container d-flex flex-column justify-content-center align-items-center">
 
-    <swiper [slidesPerView]="1" [spaceBetween]="10" [pagination]="true" [scrollbar]="{ draggable: true }" class="w-100">
-      <ng-container *ngFor="let element of sliderElements">
-        <ng-template [swiperSlide]>
-          <!-- Image template -->
-          <div class="slider-image">
-            <img
-              *ngIf="element.type === 'img'"
-              class="rounded-5 slider-image-main w-100"
-              [src]="'https://test.back-landing.genral.net/' + element.path"
-            >
-            <iframe
-              *ngIf="element.type === 'youtube_video'"
-              src="https://www.youtube.com/embed/gLs74IjS0H4"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-              class='w-100 slider-image-main'
-            ></iframe>
-          </div>
+      <swiper [slidesPerView]="1" [spaceBetween]="10" [navigation]="true" [scrollbar]="{ draggable: true }" class="w-100">
+        <ng-container *ngFor="let element of sliderElements">
+          <ng-template [swiperSlide]>
+            <!-- Image template -->
+            <div class="slider-image">
+              <img
+                *ngIf="element.type === 'img'"
+                class="rounded-5 slider-image-main w-100"
+                [src]="'https://test.back-landing.genral.net/' + element.path"
+              >
+              <iframe
+                *ngIf="element.type === 'youtube_video'"
+                src="https://www.youtube.com/embed/gLs74IjS0H4"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                class='w-100 slider-image-main'
+              ></iframe>
+            </div>
 
-        </ng-template>
-      </ng-container>
-    </swiper>
+          </ng-template>
+        </ng-container>
+      </swiper>
 
-    <p class="fs-1 pt-sm text-center" [ngStyle]="{ color: fontColor }">
-      {{currentLang == 'en' ? sliderTitle : sliderTitleAr}}
-    </p>
-
+      <p class="fs-1 pt-sm text-center" [ngStyle]="{ color: fontColor }">
+        {{currentLang == 'en' ? sliderTitle : sliderTitleAr}}
+      </p>
 
     </div>
 
 
     <div class="shape">
-      <img src="../../../assets/images/bottom-right.png" class="shape-bottom-right" alt="img image png">
+      <img src="assets/images/bottom-right.png" class="shape-bottom-right" alt="img image png">
     </div>
 
     <div class="shape">
-      <img src="../../../assets/images/bottom-left.png" class="shape-bottom-left" alt="img image png">
+      <img src="assets/images/bottom-left.png" class="shape-bottom-left" alt="img image png">
     </div>
 
 
     <div class="shape">
-      <img src="../../../assets/images/top-left.png" class="shape-top-left" alt="img image png">
+      <img src="assets/images/top-left.png" class="shape-top-left" alt="img image png">
     </div>
 
     <div class="shape">
-      <img src="../../../assets/images/top-right.png" class="shape-top-right" alt="img image png">
+      <img src="assets/images/top-right.png" class="shape-top-right" alt="img image png">
     </div>
 </section>

@@ -10,6 +10,7 @@ import * as Headroom from 'headroom.js';
 export class HeaderComponent implements OnInit {
   @Input() navbarIcons!: any[];
   @Input() navbarColor!: any;
+  @Input() fontColor!: any;
 
   constructor(private translateService: TranslateService) {}
 

@@ -7,15 +7,14 @@
     <div class="row">
       <div class="col-6 mb-sm" *ngFor="let video of service?.videos">
         <a [href]="video?.link" target="_blank" style="text-decoration: underline;">
-          <div class=" position-relative">
+          <div class="position-relative">
             <img src="assets/images/play.png" class="card-img-button" alt="play button">
-            <img class="card-img-top" style="max-width: 100%;" [src]="'https://test.back-landing.genral.net/' + video?.img_path" class="w-100" alt="Card image cap">
+            <img class="card-img-top w-100" [src]="'https://test.back-landing.genral.net/' + video?.img_path" alt="Card image cap">
           </div>
           <div class="card-body d-flex justify-content-center align-items-center p-sm">
             <h5 class="card-title text-center" [ngStyle]="{ color: fontColor }">{{currentLang == 'en' ? video?.title : video?.title_ar}}</h5>
           </div>
         </a>
-
       </div>
     </div>
   </div>

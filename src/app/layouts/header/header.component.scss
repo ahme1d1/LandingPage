@@ -1,8 +1,6 @@
 @import "src/assets/style/global";
 
 .theHeader {
-  background: $dark;
-  color: $white;
   font-weight: $font-weight-bold;
   z-index: $zindex-sticky;
   position: fixed;

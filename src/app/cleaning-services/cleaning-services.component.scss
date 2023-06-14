@@ -25,10 +25,25 @@ h2 , h5 {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 30%;
-  // @include media-breakpoint-down(lg) {
-  //   width: 40%;
-  // }
-  // @include media-breakpoint-down(md) {
-  //   width: 35%;
-  // }
+}
+
+.card-img-top {
+  max-width: 100%;
+  max-height: 385px;
+  object-fit: cover;
+  @include media-breakpoint-down(xxl) {
+    max-height: 330px;
+  }
+  @include media-breakpoint-down(xl) {
+    max-height: 270px;
+  }
+  @include media-breakpoint-down(lg) {
+    max-height: 200px;
+  }
+  @include media-breakpoint-down(md) {
+    max-height: 150px;
+  }
+  @include media-breakpoint-down(sm) {
+    max-height: 100px;
+  }
 }

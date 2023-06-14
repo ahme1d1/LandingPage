@@ -1,4 +1,4 @@
-<header class="theHeader bg-dark text-white">
+<header class="theHeader" [ngStyle]="{ 'background-color': navbarColor }">
   <div class="theHeader-container ">
     <ul class="theHeader-nav w-100 m-0 justify-content-between" style="border: 2px solid #5eacc0;">
       <li *ngFor="let icon of navbarIcons" class="border-right">
@@ -10,7 +10,9 @@
             height="40"
             style="object-fit: cover;"
           >
-          <span class="text-center" [ngStyle]="{ color: navbarColor }">{{icon?.title}}</span>
+          <span class="text-center" [ngStyle]="{ color: fontColor }">
+            {{currentLang == 'en' ? icon?.title : icon?.title_ar}}
+          </span>
         </a>
       </li>
       <li class="border-right">
@@ -22,7 +24,7 @@
             height="40"
             style="object-fit: cover;"
           >
-          <span [ngStyle]="{ color: navbarColor }">Ar</span>
+          <span [ngStyle]="{ color: fontColor }">Ar</span>
         </a>
         <a href="javascript:void(0)" class="theHeader__icons" title="العربية" (click)="changeLangage('en')" *ngIf="currentLang == 'ar'">
           <img
@@ -32,7 +34,7 @@
             height="40"
             style="object-fit: cover;"
           >
-          <span [ngStyle]="{ color: navbarColor }">En</span>
+          <span [ngStyle]="{ color: fontColor }">En</span>
         </a>
       </li>
     </ul>
