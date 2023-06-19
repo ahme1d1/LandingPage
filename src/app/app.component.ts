@@ -3,6 +3,7 @@ import { AppService } from './app.service';
 import { Title } from '@angular/platform-browser';
 import { TranslateService } from '@ngx-translate/core';
 import { DOCUMENT } from '@angular/common';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -20,15 +21,16 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.loadData();
     this.initializeApp()
+    this.loadData();
   }
 
   loadData() {
     this.appService.getData().subscribe((res) => {
       this.data = res.data;
-      this.titleService.setTitle(res.data.footer_title);
-      this.setFavicon(`https://test.back-landing.genral.net/${res.data.footer_logo_path}`);
+      const lang = this.translateService.getDefaultLang();
+      this.titleService.setTitle(lang === 'ar' ? res.data.footer_title_ar : res.data.footer_title);
+      this.setFavicon(`${environment.url}${res.data.footer_logo_path}`);
     });
   }
 

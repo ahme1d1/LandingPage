@@ -14,6 +14,8 @@ import { SwiperModule } from 'swiper/angular';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { SafePipe } from './pipes/safe.pipe';
+import { UrlPrefixPipe } from './pipes/url-prefix.pipe';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -29,7 +31,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     OurComponent,
     FooterComponent,
     HeaderComponent,
-    BestCleanComponent
+    BestCleanComponent,
+    SafePipe,
+    UrlPrefixPipe
   ],
   imports: [
     BrowserModule,

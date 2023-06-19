@@ -2,7 +2,7 @@
 
     <div class="container d-flex flex-column justify-content-center align-items-center">
 
-      <swiper [slidesPerView]="1" [spaceBetween]="10" [navigation]="true" [scrollbar]="{ draggable: true }" class="w-100">
+      <swiper [config]="swiperConfig"  class="w-100">
         <ng-container *ngFor="let element of sliderElements">
           <ng-template [swiperSlide]>
             <!-- Image template -->
@@ -10,11 +10,11 @@
               <img
                 *ngIf="element.type === 'img'"
                 class="rounded-5 slider-image-main w-100"
-                [src]="'https://test.back-landing.genral.net/' + element.path"
+                [src]="element.path | urlPrefix"
               >
               <iframe
                 *ngIf="element.type === 'youtube_video'"
-                src="https://www.youtube.com/embed/gLs74IjS0H4"
+                [src]="element.path | safe"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
                 class='w-100 slider-image-main'

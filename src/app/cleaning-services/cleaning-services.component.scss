@@ -24,7 +24,7 @@ h2 , h5 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 30%;
+  width: 15%;
 }
 
 .card-img-top {
@@ -46,4 +46,17 @@ h2 , h5 {
   @include media-breakpoint-down(sm) {
     max-height: 100px;
   }
+
 }
+
+.blur {
+  transition: filter 0.3s ease-in-out;
+  &:hover {
+    filter: blur(5px);
+    .card-img-button {
+      filter: none;
+    }
+  }
+}
+
+ 
