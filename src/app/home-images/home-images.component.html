@@ -1,0 +1,12 @@
+<section class="pt-lg pb-lg ">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let img of images">
+        <img
+          class="rounded-5 w-100"
+          [src]="img.img_path | urlPrefix"
+        >
+      </div>
+    </div>
+  </div>
+</section>

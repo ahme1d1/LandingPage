@@ -2,8 +2,8 @@
 
     <div class="container d-flex flex-column justify-content-center align-items-center">
 
-      <swiper [config]="swiperConfig"  class="w-100">
-        <ng-container *ngFor="let element of sliderElements">
+      <swiper [config]="swiperConfig" class="w-100">
+        <ng-container *ngFor="let element of sliderElements; let i ='index'">
           <ng-template [swiperSlide]>
             <!-- Image template -->
             <div class="slider-image">
@@ -18,9 +18,9 @@
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
                 class='w-100 slider-image-main'
+                [id]="'video-' + i"
               ></iframe>
             </div>
-
           </ng-template>
         </ng-container>
       </swiper>
