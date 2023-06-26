@@ -1,11 +1,8 @@
 <section class="pt-lg pb-lg position-relative">
-
     <div class="container d-flex flex-column justify-content-center align-items-center">
-
       <swiper [config]="swiperConfig" class="w-100">
         <ng-container *ngFor="let element of sliderElements; let i ='index'">
           <ng-template [swiperSlide]>
-            <!-- Image template -->
             <div class="slider-image">
               <img
                 *ngIf="element.type === 'img'"
@@ -24,27 +21,20 @@
           </ng-template>
         </ng-container>
       </swiper>
-
       <p class="fs-1 pt-sm text-center" [ngStyle]="{ color: fontColor }">
         {{currentLang == 'en' ? sliderTitle : sliderTitleAr}}
       </p>
-
     </div>
-
 
     <div class="shape">
       <img src="assets/images/bottom-right.png" class="shape-bottom-right" alt="img image png">
     </div>
-
     <div class="shape">
       <img src="assets/images/bottom-left.png" class="shape-bottom-left" alt="img image png">
     </div>
-
-
     <div class="shape">
       <img src="assets/images/top-left.png" class="shape-top-left" alt="img image png">
     </div>
-
     <div class="shape">
       <img src="assets/images/top-right.png" class="shape-top-right" alt="img image png">
     </div>
