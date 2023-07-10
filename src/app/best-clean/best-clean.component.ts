@@ -18,11 +18,11 @@ export class BestCleanComponent {
   constructor(private translateService: TranslateService) {}
 
   swiperConfig: SwiperOptions = {
-    spaceBetween: 10,
     slidesPerView: 1,
+    spaceBetween: 10,
     navigation: true,
     autoplay: {
-      delay: 4000,
+      delay: 1000,
       disableOnInteraction: false
     },
     loop: true,
@@ -35,7 +35,6 @@ export class BestCleanComponent {
       slideShadows: false,
     },
     breakpoints: {
-      // when window width is >= 320px
       320: {
         slidesPerView: 1,
         spaceBetween: 10,

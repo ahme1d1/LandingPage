@@ -1,7 +1,7 @@
 <section class="pt-lg pb-lg position-relative">
     <div class="container d-flex flex-column justify-content-center align-items-center">
       <swiper [config]="swiperConfig" class="w-100">
-        <ng-container *ngFor="let element of sliderElements; let i ='index'">
+        <ng-container *ngFor="let element of sliderElements; let i = index">
           <ng-template [swiperSlide]>
             <div class="slider-image">
               <img
