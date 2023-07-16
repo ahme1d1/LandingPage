@@ -27,6 +27,7 @@ export class AppComponent implements OnInit {
 
   loadData() {
     this.appService.getData().subscribe((res) => {
+      console.log(res.data)
       this.data = res.data;
       const lang = this.translateService.getDefaultLang();
       this.titleService.setTitle(lang === 'ar' ? res.data.footer_title_ar : res.data.footer_title);

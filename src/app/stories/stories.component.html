@@ -1,0 +1,20 @@
+<section class="pb-lg position-relative">
+  <div class="container">
+    <div class="mb-lg d-flex align-items-center">
+      <img src="assets/images/stories.png" alt="image" width="30" height="30">
+      <span class="fs-3 ms-md" [ngStyle]="{ color: fontColor }">Stories: </span>
+    </div>
+    <swiper [config]="swiperConfig" class="w-100">
+      <ng-container *ngFor="let element of stories; let i = index">
+        <ng-template [swiperSlide]>
+          <div class="slider-image">
+            <img
+              class="rounded-4 slider-image-main w-100"
+              [src]="element.img_path | urlPrefix"
+            >
+          </div>
+        </ng-template>
+      </ng-container>
+    </swiper>
+  </div>
+</section>

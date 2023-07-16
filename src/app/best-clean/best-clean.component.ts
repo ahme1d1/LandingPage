@@ -1,4 +1,4 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import SwiperCore, { Navigation, Pagination ,SwiperOptions, Autoplay, EffectCoverflow } from 'swiper';
 SwiperCore.use([Navigation, Pagination, Autoplay, EffectCoverflow ]);
@@ -7,7 +7,6 @@ SwiperCore.use([Navigation, Pagination, Autoplay, EffectCoverflow ]);
   selector: 'app-best-clean',
   templateUrl: './best-clean.component.html',
   styleUrls: ['./best-clean.component.scss'],
-  encapsulation : ViewEncapsulation.None
 })
 export class BestCleanComponent {
   @Input() sliderElements!: any[];
@@ -21,11 +20,11 @@ export class BestCleanComponent {
     slidesPerView: 1,
     spaceBetween: 10,
     navigation: true,
-    autoplay: {
-      delay: 1000,
-      disableOnInteraction: false
-    },
-    loop: true,
+    // autoplay: {
+    //   delay: 1000,
+    //   disableOnInteraction: false
+    // },
+    // loop: true,
     effect: 'coverflow',
     coverflowEffect: {
       rotate: 50,

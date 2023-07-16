@@ -1,7 +1,7 @@
-<section class="pt-lg pb-lg ">
+<section class="pt-lg">
   <div class="container">
     <div class="row">
-      <div class="col-md-4" *ngFor="let video of videos">
+      <div class="col-12 col-md-6 col-lg-4 mb-md" *ngFor="let video of videos">
         <iframe
           [src]="video.link | safe"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

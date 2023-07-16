@@ -16,6 +16,7 @@ import { SafePipe } from './pipes/safe.pipe';
 import { UrlPrefixPipe } from './pipes/url-prefix.pipe';
 import { HomeImagesComponent } from './home-images/home-images.component';
 import { HomeVideosComponent } from './home-videos/home-videos.component';
+import { StoriesComponent } from './stories/stories.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -33,7 +34,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     SafePipe,
     UrlPrefixPipe,
     HomeImagesComponent,
-    HomeVideosComponent
+    HomeVideosComponent,
+    StoriesComponent
    ],
   imports: [
     BrowserModule,
