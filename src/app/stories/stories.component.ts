@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import SwiperCore, { Navigation, Pagination ,SwiperOptions, Autoplay } from 'swiper';
-SwiperCore.use([Navigation, Pagination, Autoplay ]);
+import { TranslateService } from '@ngx-translate/core';
+import SwiperCore, { Pagination ,SwiperOptions, Autoplay } from 'swiper';
+SwiperCore.use([ Pagination, Autoplay ]);
 
 @Component({
   selector: 'app-stories',
@@ -14,9 +15,11 @@ export class StoriesComponent implements OnInit {
   swiperConfig: SwiperOptions = {
     slidesPerView: 1,
     spaceBetween: 10,
-    // navigation: true,
     pagination: true,
-    // centeredSlides: true,
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false
+    },
     breakpoints: {
       320: {
         slidesPerView: 1,
@@ -37,9 +40,13 @@ export class StoriesComponent implements OnInit {
     },
   };
 
-  constructor() { }
+  constructor(private translateService: TranslateService) { }
 
   ngOnInit() {
+  }
+
+  get currentLang(): string {
+    return this.translateService.getDefaultLang();
   }
 
 }

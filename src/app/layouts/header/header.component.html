@@ -1,6 +1,20 @@
 <header class="theHeader" [ngStyle]="{ 'background-color': navbarColor }">
   <div class="theHeader-container ">
     <ul class="theHeader-nav w-100 m-0 justify-content-between" style="border: 2px solid #5eacc0;">
+      <li class="border-right">
+        <a routerLink="/" target="_blank" class="theHeader__icons">
+          <img
+            [src]="footerLogoPath | urlPrefix"
+            alt="Icon"
+            width="40"
+            height="40"
+            style="object-fit: cover;"
+          >
+          <span class="text-center" [ngStyle]="{ color: fontColor }">
+            {{currentLang == 'en' ? footerTitle : footerTitleAr}}
+          </span>
+        </a>
+      </li>
       <li *ngFor="let icon of navbarIcons" class="border-right">
         <a [href]="icon?.link" target="_blank" class="theHeader__icons">
           <img

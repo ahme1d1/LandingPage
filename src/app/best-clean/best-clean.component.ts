@@ -20,11 +20,10 @@ export class BestCleanComponent {
     slidesPerView: 1,
     spaceBetween: 10,
     navigation: true,
-    // autoplay: {
-    //   delay: 1000,
-    //   disableOnInteraction: false
-    // },
-    // loop: true,
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false
+    },
     effect: 'coverflow',
     coverflowEffect: {
       rotate: 50,
