@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import SwiperCore, { Navigation, Pagination ,SwiperOptions, Autoplay, EffectCoverflow } from 'swiper';
-SwiperCore.use([Navigation, Pagination, Autoplay, EffectCoverflow ]);
+import SwiperCore, { Navigation, Pagination ,SwiperOptions, Autoplay, EffectCoverflow, Thumbs } from 'swiper';
+SwiperCore.use([Navigation, Pagination, Autoplay, EffectCoverflow, Thumbs ]);
 
 @Component({
   selector: 'app-best-clean',
@@ -13,17 +13,17 @@ export class BestCleanComponent {
   @Input() sliderTitle!: any;
   @Input() sliderTitleAr!: any;
   @Input() fontColor!: any;
-
+  thumbsSwiper: any;
   constructor(private translateService: TranslateService) {}
 
   swiperConfig: SwiperOptions = {
     slidesPerView: 1,
     spaceBetween: 10,
     navigation: true,
-    autoplay: {
-      delay: 2000,
-      disableOnInteraction: false
-    },
+    // autoplay: {
+    //   delay: 2000,
+    //   disableOnInteraction: false
+    // },
     effect: 'coverflow',
     coverflowEffect: {
       rotate: 50,
