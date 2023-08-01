@@ -16,25 +16,52 @@ export class BestCleanComponent {
   thumbsSwiper: any;
   constructor(private translateService: TranslateService) {}
 
+  // swiperConfig: SwiperOptions = {
+  //   slidesPerView: 1,
+  //   spaceBetween: 10,
+  //   navigation: true,
+  //   // autoplay: {
+  //   //   delay: 2000,
+  //   //   disableOnInteraction: false
+  //   // },
+  //   effect: 'coverflow',
+  //   coverflowEffect: {
+  //     rotate: 50,
+  //     stretch: 0,
+  //     depth: 100,
+  //     modifier: 1,
+  //     slideShadows: false,
+  //   },
+  //   breakpoints: {
+  //     320: {
+  //       slidesPerView: 1,
+  //       spaceBetween: 10,
+  //     },
+  //     720: {
+  //       slidesPerView: 2,
+  //       spaceBetween: 20,
+  //     },
+  //     992: {
+  //       slidesPerView: 3,
+  //       spaceBetween: 20,
+  //     },
+  //     1200: {
+  //       slidesPerView: 3,
+  //       spaceBetween: 20,
+  //     },
+  //   },
+  // };
+
+
+
   swiperConfig: SwiperOptions = {
-    slidesPerView: 1,
+    slidesPerView: 4,
     spaceBetween: 10,
-    navigation: true,
-    // autoplay: {
-    //   delay: 2000,
-    //   disableOnInteraction: false
-    // },
-    effect: 'coverflow',
-    coverflowEffect: {
-      rotate: 50,
-      stretch: 0,
-      depth: 100,
-      modifier: 1,
-      slideShadows: false,
-    },
+    freeMode: true,
+    watchSlidesProgress: true,
     breakpoints: {
       320: {
-        slidesPerView: 1,
+        slidesPerView: 2,
         spaceBetween: 10,
       },
       720: {
@@ -46,7 +73,7 @@ export class BestCleanComponent {
         spaceBetween: 20,
       },
       1200: {
-        slidesPerView: 3,
+        slidesPerView: 4,
         spaceBetween: 20,
       },
     },

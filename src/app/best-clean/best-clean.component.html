@@ -43,10 +43,7 @@
       </swiper>
       <swiper
         (swiper)="thumbsSwiper = $event"
-        [spaceBetween]="10"
-        [slidesPerView]="4"
-        [freeMode]="true"
-        [watchSlidesProgress]="true"
+        [config]="swiperConfig"
         class="mySwiper"
       >
         <ng-template swiperSlide *ngFor="let element of sliderElements; let i = index">
