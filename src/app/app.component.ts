@@ -12,6 +12,7 @@ import { environment } from 'src/environments/environment';
 })
 export class AppComponent implements OnInit {
   data: any;
+  stories : any
   constructor(
     private appService: AppService,
     private titleService: Title,
@@ -23,11 +24,22 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.initializeApp()
     this.loadData();
+    this.appService.getUserStories().subscribe(
+      (res) => {
+
+        this.stories = res.data;
+      },
+      (error) => {
+        console.error('Error fetching Instagram stories:', error);
+      }
+    );
+    this.appService.getUserReels().subscribe((res) => {
+      this.stories = res.data;
+    })
   }
 
   loadData() {
     this.appService.getData().subscribe((res) => {
-      console.log(res.data)
       this.data = res.data;
       const lang = this.translateService.getDefaultLang();
       this.titleService.setTitle(lang === 'ar' ? res.data.footer_title_ar : res.data.footer_title);
