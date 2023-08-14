@@ -15,6 +15,7 @@
       [fontColor]="data?.font_color"
     ></app-best-clean>
     <app-home-images
+      *ngIf="data?.images"
       [images]="data?.images"
     ></app-home-images>
     <!-- <app-home-videos
@@ -39,13 +40,18 @@
       [rightSectionDescripitonAr]="data?.right_section_descripiton_ar"
       [fontColor]="data?.font_color"
     ></app-our>
-    <app-value
+    <!-- <app-value
       [lastSectionTitle]="data?.last_section_title"
       [lastSectionDescription]="data?.last_section_description"
       [lastSectionTitleAr]="data?.last_section_title_ar"
       [lastSectionDescriptionAr]="data?.last_section_description_ar"
       [fontColor]="data?.font_color"
-    ></app-value>
+    ></app-value> -->
+    <app-reviews
+      *ngIf="data?.reviews"
+      [reviews]="data?.reviews"
+    >
+    </app-reviews>
     <app-footer
       [footerLogoPath]="data?.footer_logo_path"
       [footerTitle]="data?.footer_title"
