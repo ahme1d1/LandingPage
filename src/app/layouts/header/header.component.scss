@@ -121,3 +121,12 @@
     font-size: 9px;
   }
 }
+
+.icon {
+  width: rem(40px);
+  height: rem(40px);
+  @include media-breakpoint-down(sm) {
+    width: rem(30px);
+    height: rem(30px);
+  }
+}

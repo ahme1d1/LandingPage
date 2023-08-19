@@ -10,7 +10,7 @@ export class ImageComponent implements OnInit {
 
   @Input() alt = 'Image';
   @Input() ratio = '';
-  
+
   constructor() { }
 
   ngOnInit() {

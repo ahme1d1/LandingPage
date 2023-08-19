@@ -3,13 +3,15 @@
     <h2 class="mb-md d-inline-block" [ngStyle]="{ color: fontColor }">
       {{currentLang == 'en' ? service.title : service.title_ar}}
     </h2>
-    <p class="text-center" [ngStyle]="{ color: fontColor }">{{currentLang == 'en' ? service.description : service.description_ar}}</p>
+    <p class="text-center mb-lg" [ngStyle]="{ color: fontColor }">{{currentLang == 'en' ? service.description : service.description_ar}}</p>
     <div class="row">
-      <div class="col-6 mb-sm" *ngFor="let video of service?.videos">
+      <div class="col-md-6 mb-sm" *ngFor="let video of service?.videos">
         <a [href]="video?.link" target="_blank" style="text-decoration: underline;">
           <div class="position-relative">
             <img src="assets/images/play.png" class="card-img-button" alt="play button">
-            <img class="card-img-top w-100 blur" [src]="video?.img_path | urlPrefix" alt="Card image cap">
+            <div class="blur">
+              <app-image [src]="video?.img_path | urlPrefix"  ratio="is-8-5"></app-image>
+            </div>
           </div>
           <div class="card-body d-flex justify-content-center align-items-center p-sm">
             <h5 class="card-title text-center" [ngStyle]="{ color: fontColor }">{{currentLang == 'en' ? video?.title : video?.title_ar}}</h5>

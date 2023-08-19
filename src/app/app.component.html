@@ -3,32 +3,15 @@
     [navbarIcons]="data?.navbar_icons"
     [navbarColor]="data?.navbar_color"
     [fontColor]="data?.font_color"
-    [footerLogoPath]="data?.footer_logo_path"
-    [footerTitle]="data?.footer_title"
-    [footerTitleAr]="data?.footer_title_ar"
+    [footerLogoPath]="data?.logo_path"
+    [footerTitle]="data?.title"
+    [footerTitleAr]="data?.title_ar"
   ></app-header>
   <div class="theApp-main">
     <app-best-clean
-      [sliderTitle]="data?.slider_title"
-      [sliderTitleAr]="data?.slider_title_ar"
       [sliderElements]="data?.slider_elements"
       [fontColor]="data?.font_color"
     ></app-best-clean>
-    <app-home-images
-      *ngIf="data?.images"
-      [images]="data?.images"
-    ></app-home-images>
-    <!-- <app-home-videos
-      [videos]="data?.videos"
-    ></app-home-videos> -->
-    <app-stories
-      [stories]="stories"
-      [fontColor]="data?.font_color"
-    ></app-stories>
-    <app-cleaning-services
-      [services]="data?.services"
-      [fontColor]="data?.font_color"
-    ></app-cleaning-services>
     <app-our
       [leftSectionTitle]="data?.left_section_title"
       [leftSectionDescription]="data?.left_section_description"
@@ -40,18 +23,28 @@
       [rightSectionDescripitonAr]="data?.right_section_descripiton_ar"
       [fontColor]="data?.font_color"
     ></app-our>
-    <!-- <app-value
-      [lastSectionTitle]="data?.last_section_title"
-      [lastSectionDescription]="data?.last_section_description"
-      [lastSectionTitleAr]="data?.last_section_title_ar"
-      [lastSectionDescriptionAr]="data?.last_section_description_ar"
+    <app-cleaning-services
+      [services]="data?.services"
       [fontColor]="data?.font_color"
-    ></app-value> -->
+    ></app-cleaning-services>
+    <app-stories
+      *ngIf="stories"
+      [stories]="stories"
+      [fontColor]="data?.font_color"
+    ></app-stories>
     <app-reviews
       *ngIf="data?.reviews"
       [reviews]="data?.reviews"
     >
     </app-reviews>
+    <app-home-images
+      *ngIf="data?.images"
+      [images]="data?.images"
+    ></app-home-images>
+    <app-contact-us
+      [fontColor]="data?.font_color"
+    >
+    </app-contact-us>
     <app-footer
       [footerLogoPath]="data?.footer_logo_path"
       [footerTitle]="data?.footer_title"
@@ -61,5 +54,17 @@
       [footerIcons]="data?.footer_icons"
       [fontColor]="data?.font_color"
     ></app-footer>
+    <ul class="theApp-main-icons">
+      <li>
+        <a href="https://wa.me/your-phone-number" title="whatsapp">
+          <svg-icon src="assets/icons/whatsapp.svg" class="fs-lg"></svg-icon>
+        </a>
+      </li>
+      <li>
+        <a href="tel:your-phone-number" title="phone">
+          <svg-icon src="assets/icons/phone.svg" class="fs-lg"></svg-icon>
+        </a>
+      </li>
+    </ul>
   </div>
 </div>

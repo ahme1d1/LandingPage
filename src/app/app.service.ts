@@ -55,4 +55,14 @@ export class AppService {
       })
     );
   }
+
+  createContact(contact: any): Observable<any> {
+    const formData = new FormData();
+    formData.append('name', contact.name)
+    formData.append('email', contact.email)
+    formData.append('phone', contact.phone)
+    formData.append('content', contact.content)
+
+    return this.http.post<any>(`${environment.apiUrl}client/form_message`, formData)
+  }
 }

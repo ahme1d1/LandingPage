@@ -30,7 +30,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/ngx-bar-rating/themes/br-default-theme.scss"
             ],
             "scripts": []
           },

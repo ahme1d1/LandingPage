@@ -43,7 +43,7 @@ export class AppComponent implements OnInit {
       this.data = res.data;
       const lang = this.translateService.getDefaultLang();
       this.titleService.setTitle(lang === 'ar' ? res.data.footer_title_ar : res.data.footer_title);
-      this.setFavicon(`${environment.url}${res.data.footer_logo_path}`);
+      this.setFavicon(`${environment.url}${res.data.logo_path}`);
     });
   }
 

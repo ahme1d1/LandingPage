@@ -1,3 +1,15 @@
-<p>
-  reviews works!
-</p>
+<section class="pb-lg pt-lg">
+  <div class="container">
+    <swiper [config]="swiperConfig">
+      <ng-template swiperSlide *ngFor="let review of reviews ; let i = 'index+1'">
+        <a href="javascript:void(0)">
+          <app-image [src]="review?.img_path | urlPrefix" ratio="rounded is-1-1"></app-image>
+        </a>
+        <div class="d-flex align-items-center justify-content-center flex-column">
+          <span class="fs-md">{{currentLang == 'en' ? review?.title : review?.title_ar}}</span>
+          <bar-rating [(rate)]="review.rate" [max]="5" [readOnly]="true"></bar-rating>
+        </div>
+      </ng-template>
+    </swiper>
+  </div>
+</section>

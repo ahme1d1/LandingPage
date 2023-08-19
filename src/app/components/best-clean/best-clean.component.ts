@@ -10,10 +10,7 @@ SwiperCore.use([Navigation, Pagination, Autoplay, EffectCoverflow, Thumbs ]);
 })
 export class BestCleanComponent {
   @Input() sliderElements!: any[];
-  @Input() sliderTitle!: any;
-  @Input() sliderTitleAr!: any;
   @Input() fontColor!: any;
-  thumbsSwiper: any;
   constructor(private translateService: TranslateService) {}
 
   // swiperConfig: SwiperOptions = {

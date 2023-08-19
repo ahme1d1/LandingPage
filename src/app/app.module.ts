@@ -21,6 +21,9 @@ import { ImageComponent } from './shared/components/image/image.component';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { BarRatingModule } from "ngx-bar-rating";
 import { ReviewsComponent } from './components/reviews/reviews.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -41,7 +44,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     HomeVideosComponent,
     StoriesComponent,
     ImageComponent,
-    ReviewsComponent
+    ReviewsComponent,
+    ContactUsComponent
    ],
   imports: [
     BrowserModule,
@@ -50,6 +54,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     HttpClientModule,
     LazyLoadImageModule,
     BarRatingModule,
+    ReactiveFormsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -57,6 +62,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient],
       },
     }),
+    AngularSvgIconModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,30 +1,9 @@
-<!-- <section class="pb-lg pt-sm position-relative">
-  <div class="container">
-    <div class="mb-lg d-flex align-items-center justify-content-center">
-      <img src="assets/images/stories.png" class="me-md" alt="image" width="30" height="30" *ngIf="currentLang == 'en'">
-      <span class="fs-3" [ngStyle]="{ color: fontColor }">{{currentLang == 'en' ? 'Stories :' : ': حالات'}} </span>
-      <img src="assets/images/stories.png" class="ms-md" alt="image" width="30" height="30" *ngIf="currentLang == 'ar'">
-    </div>
-    <swiper [config]="swiperConfig" class="w-100">
-      <ng-container *ngFor="let element of stories; let i = index">
-        <ng-template [swiperSlide]>
-          <div class="slider-image">
-            <img
-              class="rounded-4 slider-image-main w-100"
-              [src]="element.img_path | urlPrefix"
-            >
-          </div>
-        </ng-template>
-      </ng-container>
-    </swiper>
-  </div>
-</section> -->
 <section class="pb-lg pt-sm position-relative">
   <div class="container">
     <div class="mb-lg d-flex align-items-center justify-content-center">
-      <img src="assets/images/stories.png" class="me-md" alt="image" width="30" height="30" *ngIf="currentLang == 'en'">
+      <svg-icon src="assets/icons/stories.svg" class="fs-lg me-xs" *ngIf="currentLang == 'en'"></svg-icon>
       <span class="fs-3" [ngStyle]="{ color: fontColor }">{{currentLang == 'en' ? 'Stories :' : ': حالات'}}</span>
-      <img src="assets/images/stories.png" class="ms-md" alt="image" width="30" height="30" *ngIf="currentLang == 'ar'">
+      <svg-icon src="assets/icons/stories.svg" class="fs-lg ms-xs" *ngIf="currentLang == 'ar'"></svg-icon>
     </div>
     <swiper [config]="swiperConfig" class="w-100">
       <ng-container *ngFor="let element of stories; let i = index">

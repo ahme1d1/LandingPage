@@ -10,7 +10,7 @@
             height="40"
             style="object-fit: cover;"
           >
-          <span class="text-center" [ngStyle]="{ color: fontColor }">
+          <span class="text-center" [ngStyle]="{ color: fontColor }" style="white-space: nowrap;">
             {{currentLang == 'en' ? footerTitle : footerTitleAr}}
           </span>
         </a>
@@ -22,6 +22,7 @@
             alt="Icon"
             width="40"
             height="40"
+            class="icon"
             style="object-fit: cover;"
           >
           <span class="text-center" [ngStyle]="{ color: fontColor }">
@@ -31,23 +32,11 @@
       </li>
       <li class="border-right">
         <a href="javascript:void(0)" class="theHeader__icons" title="English" (click)="changeLangage('ar')" *ngIf="currentLang == 'en'">
-          <img
-            src="assets/images/lang.svg"
-            alt="Icon"
-            width="40"
-            height="40"
-            style="object-fit: cover;"
-          >
+          <svg-icon src="assets/icons/lang.svg" class="fs-lg"></svg-icon>
           <span [ngStyle]="{ color: fontColor }">Ar</span>
         </a>
         <a href="javascript:void(0)" class="theHeader__icons" title="العربية" (click)="changeLangage('en')" *ngIf="currentLang == 'ar'">
-          <img
-            src="assets/images/lang.svg"
-            alt="Icon"
-            width="40"
-            height="40"
-            style="object-fit: cover;"
-          >
+          <svg-icon src="assets/icons/lang.svg" class="fs-lg"></svg-icon>
           <span [ngStyle]="{ color: fontColor }">En</span>
         </a>
       </li>

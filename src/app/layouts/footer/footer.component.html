@@ -1,8 +1,8 @@
 <section class="pt-lg pb-lg d-flex flex-column justify-content-center align-items-center position-relative">
 
   <!-- <img [src]="footerLogoPath | urlPrefix" alt="img" style="width: 15%; max-height: 250px;object-fit: cover;"> -->
-  <h1 class="text-center mt-md" [ngStyle]="{ color: fontColor }">{{currentLang == 'en' ? footerTitle : footerTitleAr}}</h1>
-  <p class="text-center" [ngStyle]="{ color: fontColor }">{{currentLang == 'en' ? footerDescription : footerDescriptionAr}}</p>
+  <!-- <h1 class="text-center mt-md" [ngStyle]="{ color: fontColor }">{{currentLang == 'en' ? footerTitle : footerTitleAr}}</h1>
+  <p class="text-center" [ngStyle]="{ color: fontColor }">{{currentLang == 'en' ? footerDescription : footerDescriptionAr}}</p> -->
 
   <div class="w-50 d-flex justify-content-around align-items-center mt-sm position-relative" style="z-index: 1;">
     <ng-container *ngFor="let icon of footerIcons">
@@ -10,8 +10,7 @@
         <img
           [src]="icon?.img_path | urlPrefix"
           alt="Icon"
-          width="60"
-          height="60"
+          class="icon"
           style="object-fit: cover;"
         >
       </a>

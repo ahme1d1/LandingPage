@@ -1,17 +1,15 @@
 @import "src/assets/style/global";
 
-section
-{
+section {
   background-image: url("../../../assets/images/Rectangle23.png");
   background-position: center center;
-  border-radius: 20px;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
-
-
-h1 { text-shadow: 3px 3px 20px #03b7ef, -2px 1px 30px #03b7ef; }
-
+h1 {
+  text-shadow: 3px 3px 20px #03b7ef, -2px 1px 30px #03b7ef;
+}
 
 .shape {
   &-bottom-right {
@@ -19,24 +17,36 @@ h1 { text-shadow: 3px 3px 20px #03b7ef, -2px 1px 30px #03b7ef; }
     right: 0;
     bottom: 0;
     width: 100%;
-    max-width: 200px;
+    max-width: 175px;
     height: auto;
+    @include media-breakpoint-down(lg) {
+      max-width: 150px;
+    }
+    @include media-breakpoint-down(md) {
+      max-width: 100px;
+    }
+  }
+  &-bottom-left {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: 175px;
+    height: auto;
+    @include media-breakpoint-down(lg) {
+      max-width: 150px;
+    }
     @include media-breakpoint-down(md) {
       max-width: 100px;
     }
   }
 }
 
-.shape {
-  &-bottom-left {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    max-width: 200px;
-    height: auto;
-    @include media-breakpoint-down(md) {
-      max-width: 100px;
-    }
+.icon {
+  width: rem(40px);
+  height: rem(40px);
+  @include media-breakpoint-down(sm) {
+    width: rem(30px);
+    height: rem(30px);
   }
 }

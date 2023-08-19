@@ -1,38 +1,14 @@
 <section class="pt-lg pb-lg position-relative">
     <div class="container d-flex flex-column justify-content-center align-items-center">
-      <!-- <swiper [config]="swiperConfig" class="w-100">
-        <ng-container *ngFor="let element of sliderElements; let i = index">
-          <ng-template [swiperSlide]>
-            <div class="slider-image">
-              <img
-                *ngIf="element.type === 'img'"
-                class="rounded-5 slider-image-main w-100"
-                [src]="element.path | urlPrefix"
-              >
-              <iframe
-                *ngIf="element.type === 'youtube_video'"
-                [src]="element.path | safe"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                class='w-100 slider-image-main'
-                [id]="'video-' + i"
-              ></iframe>
-            </div>
-          </ng-template>
-        </ng-container>
-      </swiper> -->
       <swiper
         [spaceBetween]="10"
         [slidesPerView]="1"
         [navigation]="true"
-        [thumbs]="{ swiper: thumbsSwiper }"
-        class="mySwiper2"
       >
         <ng-template swiperSlide *ngFor="let element of sliderElements; let i = index">
-          <img
-            *ngIf="element.type === 'img'"
-            [src]="element.path | urlPrefix"
-          >
+          <a href="javascript:void(0)" *ngIf="element.type === 'img'">
+            <app-image [src]="element.path | urlPrefix" ratio="is-3-1"></app-image>
+          </a>
           <iframe
             *ngIf="element.type === 'youtube_video'"
             [src]="element.path | safe"
@@ -41,27 +17,6 @@
           ></iframe>
         </ng-template>
       </swiper>
-      <!-- <swiper
-        (swiper)="thumbsSwiper = $event"
-        [config]="swiperConfig"
-        class="mySwiper"
-      >
-        <ng-template swiperSlide *ngFor="let element of sliderElements; let i = index">
-          <img
-            *ngIf="element.type === 'img'"
-            [src]="element.path | urlPrefix"
-          >
-          <iframe
-            *ngIf="element.type === 'youtube_video'"
-            [src]="element.path | safe"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          ></iframe>
-        </ng-template>
-      </swiper> -->
-      <p class="fs-1 pt-sm text-center" [ngStyle]="{ color: fontColor }">
-        {{currentLang == 'en' ? sliderTitle : sliderTitleAr}}
-      </p>
     </div>
 
     <div class="shape">

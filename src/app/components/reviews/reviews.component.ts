@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import SwiperCore, { SwiperOptions, Autoplay} from 'swiper';
+SwiperCore.use([ Autoplay]);
 
 @Component({
   selector: 'app-reviews',
@@ -9,14 +11,41 @@ import { TranslateService } from '@ngx-translate/core';
 export class ReviewsComponent implements OnInit {
   @Input() reviews!: any[];
 
-  constructor(private translateService: TranslateService) {}
+  swiperConfig: SwiperOptions = {
+    slidesPerView: 4,
+    spaceBetween: 10,
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 2,
+        spaceBetween: 10,
+      },
+      720: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+      992: {
+        slidesPerView: 4,
+        spaceBetween: 20,
+      },
+      1200: {
+        slidesPerView: 4,
+        spaceBetween: 20,
+      },
+    },
+  };
 
-  get currentLang(): string {
-    return this.translateService.getDefaultLang();
-  }
+  constructor(private translateService: TranslateService) {}
 
   ngOnInit() {
     console.log(this.reviews)
+  }
+
+  get currentLang(): string {
+    return this.translateService.getDefaultLang();
   }
 
 }

@@ -1,15 +1,18 @@
 
 <section class="pt-lg pb-lg">
-  <div class="container pt-lg pb-lg">
-    <div class="row">
-      <div class="col-6 d-flex flex-column justify-content-center align-items-center border-right">
-        <h2 [ngStyle]="{ color: fontColor }">{{currentLang == 'en' ? leftSectionTitle : leftSectionTitleAr}}</h2>
-        <p class=" text-center" [ngStyle]="{ color: fontColor }">{{currentLang == 'en' ? leftSectionDescription : leftSectionDescriptionAr}}</p>
-      </div>
-      <div class="col-6 d-flex flex-column justify-content-center align-items-center">
-        <h2 [ngStyle]="{ color: fontColor }">{{currentLang == 'en' ? rightSectionTitle : rightSectionTitleAr}}</h2>
-        <p class="text-center" [ngStyle]="{ color: fontColor }">{{currentLang == 'en' ? rightSectionDescripiton : rightSectionDescripitonAr}}</p>
+  <div class="container ">
+    <div class="our pt-lg pb-lg">
+      <div class="row">
+        <div class="col-6 d-flex flex-column justify-content-center align-items-center border-right">
+          <h2 [ngStyle]="{ color: fontColor }">{{currentLang == 'en' ? leftSectionTitle : leftSectionTitleAr}}</h2>
+          <p class=" text-center" [ngStyle]="{ color: fontColor }">{{currentLang == 'en' ? leftSectionDescription : leftSectionDescriptionAr}}</p>
+        </div>
+        <div class="col-6 d-flex flex-column justify-content-center align-items-center">
+          <h2 [ngStyle]="{ color: fontColor }">{{currentLang == 'en' ? rightSectionTitle : rightSectionTitleAr}}</h2>
+          <p class="text-center" [ngStyle]="{ color: fontColor }">{{currentLang == 'en' ? rightSectionDescripiton : rightSectionDescripitonAr}}</p>
+        </div>
       </div>
     </div>
+
   </div>
 </section>
