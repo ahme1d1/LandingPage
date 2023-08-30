@@ -1,30 +1,30 @@
 <section class="pt-lg pb-lg mt-md mb-md">
   <div class="container">
-    <div class="mb-lg d-flex align-items-center justify-content-start mt-md">
+    <div class="mb-lg d-flex align-items-center justify-content-center mt-md">
       <svg-icon src="assets/icons/contact.svg" class="fs-lg me-md" *ngIf="currentLang == 'en'"></svg-icon>
-      <span class="fs-3" [ngStyle]="{ color: fontColor }">{{currentLang == 'en' ? 'Send Message To Us :' : 'أرسل رسالة الينا :'}}</span>
+      <span class="fs-3" [ngStyle]="{ color: fontColor }">{{currentLang == 'en' ? 'Send Message To Us' : 'أرسل رسالة الينا'}}</span>
       <svg-icon src="assets/icons/contact.svg" class="fs-lg ms-md" *ngIf="currentLang == 'ar'"></svg-icon>
     </div>
     <div class="mt-md">
       <form [formGroup]="contactForm" (ngSubmit)="createContact()">
         <div class="form-group mb-md">
-          <label for="name" class="form-label fs-sm" style="color: #B0FFFD">Name :</label>
+          <label for="name" class="form-label fs-sm" style="color: #B0FFFD">{{currentLang == 'en' ? 'Name' : 'الاسم'}} :</label>
           <input class="form-control" type="text" name="name" id="name" formControlName="name">
         </div>
         <div class="form-group mb-md">
-          <label for="Phone" class="form-label fs-sm" style="color: #B0FFFD">Phone :</label>
+          <label for="Phone" class="form-label fs-sm" style="color: #B0FFFD">{{currentLang == 'en' ? 'Phone' : 'رقم الهاتف'}} :</label>
           <input class="form-control" type="text" name="Phone" id="Phone" formControlName="phone">
         </div>
         <div class="form-group mb-md">
-          <label for="Email" class="form-label fs-sm" style="color: #B0FFFD">Email :</label>
+          <label for="Email" class="form-label fs-sm" style="color: #B0FFFD">{{currentLang == 'en' ? 'Email' : 'الايميل'}} :</label>
           <input class="form-control" type="text" name="Email" id="Email" formControlName="email">
         </div>
         <div class="form-group mb-lg">
-          <label for="Message" class="form-label fs-sm" style="color: #B0FFFD">Message :</label>
+          <label for="Message" class="form-label fs-sm" style="color: #B0FFFD">{{currentLang == 'en' ? 'Message' : 'الرسالة'}} :</label>
           <textarea class="form-control" id="Message" cols="20" rows="5" formControlName="content"></textarea>
         </div>
         <div class="d-flex align-items-center justify-content-center mb-md">
-          <button type="submit" class="btn fs-md" [disabled]="contactForm.invalid || loading">Send</button>
+          <button type="submit" class="btn fs-md" [disabled]="contactForm.invalid || loading">{{currentLang == 'en' ? 'Send' : 'ارسال'}}</button>
         </div>
       </form>
     </div>

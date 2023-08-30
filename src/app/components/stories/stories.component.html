@@ -2,7 +2,7 @@
   <div class="container">
     <div class="mb-lg d-flex align-items-center justify-content-center">
       <svg-icon src="assets/icons/stories.svg" class="fs-lg me-xs" *ngIf="currentLang == 'en'"></svg-icon>
-      <span class="fs-3" [ngStyle]="{ color: fontColor }">{{currentLang == 'en' ? 'Stories :' : ': حالات'}}</span>
+      <span class="fs-3" [ngStyle]="{ color: fontColor }">{{currentLang == 'en' ? 'Stories' : 'حالات'}}</span>
       <svg-icon src="assets/icons/stories.svg" class="fs-lg ms-xs" *ngIf="currentLang == 'ar'"></svg-icon>
     </div>
     <swiper [config]="swiperConfig" class="w-100">
