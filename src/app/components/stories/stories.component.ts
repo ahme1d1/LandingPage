@@ -15,7 +15,7 @@ export class StoriesComponent implements OnInit {
   swiperConfig: SwiperOptions = {
     slidesPerView: 1,
     spaceBetween: 10,
-    pagination: true,
+    pagination: false,
     autoplay: {
       delay: 2000,
       disableOnInteraction: false

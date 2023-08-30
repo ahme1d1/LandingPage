@@ -40,7 +40,7 @@ export class AppService {
   }
 
   getUserReels(): Observable<any> {
-    const shortLivedAccessToken = 'EAAMD633TihIBO5R22PULdXzBtjCBXlvQ0TZC0v42VTkmB4iYYkwOWZC3G9skFqhc0poFzFexmG76Xxj5Yu0KCe8WtPupH7f6SC8UlJXUzfPMCQ7ZCU7nFC3ImDSS8HczwELj6QcailqpXAWcCaCybaQ4CqsufNZBOagTgyWREbj0NCjkljgNZCm5ZBtSAEnwHHk3Y1TYl4lfoJyhG7ZAVxV5qFEVx8g1fxqDnmigRvU0KzI'; // Replace with your short-lived access token
+    const shortLivedAccessToken = 'EAAMD633TihIBOygmrlHQUjXomIYxdohQzoCj4mVBtOPixBSRpHMA7wVCm7uOT16TyyNVvYjPQGKxuE7UjreH1ADzQMa66REI2175i2ZCcBiJR7AV38d15CHT9IB5dcuMTdgMwPp2viZBZAj7fhiNZCcCKFPTCqeQBCqoLwZCiNpZBMUntfiazBSBjcXJJP9lyAJeu1Uew48bjHSiO57ZAbuKRvVfTQZD';
     const userId = '17841459270874529'; // Replace with your Instagram business account ID
     const fields = 'id,media_type,media_url,thumbnail_url,permalink,timestamp,caption';
 

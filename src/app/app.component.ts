@@ -4,6 +4,7 @@ import { Title } from '@angular/platform-browser';
 import { TranslateService } from '@ngx-translate/core';
 import { DOCUMENT } from '@angular/common';
 import { environment } from 'src/environments/environment';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -24,18 +25,14 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.initializeApp()
     this.loadData();
-    this.appService.getUserStories().subscribe(
-      (res) => {
+    this.appService.getUserReels().pipe(
+      map((response) => {
+        return response.data.filter((item: any) => item?.media_type === 'VIDEO');
+      })
+    ).subscribe((filteredReels) => {
+      this.stories = filteredReels;
+    });
 
-        this.stories = res.data;
-      },
-      (error) => {
-        console.error('Error fetching Instagram stories:', error);
-      }
-    );
-    this.appService.getUserReels().subscribe((res) => {
-      this.stories = res.data;
-    })
   }
 
   loadData() {

@@ -40,9 +40,7 @@ export class ReviewsComponent implements OnInit {
 
   constructor(private translateService: TranslateService) {}
 
-  ngOnInit() {
-    console.log(this.reviews)
-  }
+  ngOnInit() {}
 
   get currentLang(): string {
     return this.translateService.getDefaultLang();
