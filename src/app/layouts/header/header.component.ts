@@ -11,9 +11,9 @@ export class HeaderComponent implements OnInit {
   @Input() navbarIcons!: any[];
   @Input() navbarColor!: any;
   @Input() fontColor!: any;
-  @Input() footerLogoPath!: any;
-  @Input() footerTitle!: any;
-  @Input() footerTitleAr!: any;
+  @Input() logoPath!: any;
+  @Input() title!: any;
+  @Input() titleAr!: any;
 
   constructor(private translateService: TranslateService) {}
 

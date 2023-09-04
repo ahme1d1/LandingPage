@@ -1,4 +1,4 @@
-<section class="pt-lg">
+<section class="pt-lg pb-lg">
   <div class="container">
     <div class="row">
       <div class="col-12 col-md-6 col-xl-4 mb-md" *ngFor="let video of videos">
@@ -6,8 +6,7 @@
           [src]="video.link | safe"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
-          class='w-100'
-          height="400"
+          class='video'
         ></iframe>
       </div>
     </div>

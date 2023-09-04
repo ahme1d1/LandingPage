@@ -1,0 +1,9 @@
+@import "src/assets/style/global";
+
+.video {
+  width: 100%;
+  height: rem(400px);
+  @include media-breakpoint-down(sm) {
+    height: rem(200px);
+  }
+}

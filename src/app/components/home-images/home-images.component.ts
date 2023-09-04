@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home-images',
@@ -7,10 +8,18 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class HomeImagesComponent implements OnInit {
   @Input() images!: any[];
-  
-  constructor() { }
+  @Input() firstSectionTitle: any;
+  @Input() firstSectionTitleAr: any;
+  @Input() firstSectionDescription: any;
+  @Input() firstSectionDescriptionAr: any;
+
+  constructor(private translateService: TranslateService) { }
 
   ngOnInit() {
+  }
+
+  get currentLang(): string {
+    return this.translateService.getDefaultLang();
   }
 
 }

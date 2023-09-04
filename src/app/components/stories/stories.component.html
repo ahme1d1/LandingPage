@@ -1,20 +1,18 @@
-<section class="pb-lg pt-sm position-relative">
+<section class="pb-lg pt-lg position-relative">
   <div class="container">
     <div class="mb-lg d-flex align-items-center justify-content-center">
       <svg-icon src="assets/icons/stories.svg" class="fs-lg me-xs" *ngIf="currentLang == 'en'"></svg-icon>
-      <span class="fs-3" [ngStyle]="{ color: fontColor }">{{currentLang == 'en' ? 'Stories' : 'حالات'}}</span>
+      <span class="fs-lg" [ngStyle]="{ color: fontColor }">{{currentLang == 'en' ? 'Stories' : 'حالات'}}</span>
       <svg-icon src="assets/icons/stories.svg" class="fs-lg ms-xs" *ngIf="currentLang == 'ar'"></svg-icon>
     </div>
     <swiper [config]="swiperConfig" class="w-100">
       <ng-container *ngFor="let element of stories; let i = index">
         <ng-template [swiperSlide] *ngIf="element.media_url">
-          <div class="slider-image">
-            <video
-              class="rounded-4 slider-image-main w-100"
-              [src]="element.media_url"
-              controls
-            ></video>
-          </div>
+          <video
+            class="rounded-4 story"
+            [src]="element.media_url"
+            controls
+          ></video>
         </ng-template>
       </ng-container>
     </swiper>

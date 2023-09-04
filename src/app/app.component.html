@@ -3,9 +3,9 @@
     [navbarIcons]="data?.navbar_icons"
     [navbarColor]="data?.navbar_color"
     [fontColor]="data?.font_color"
-    [footerLogoPath]="data?.logo_path"
-    [footerTitle]="data?.title"
-    [footerTitleAr]="data?.title_ar"
+    [logoPath]="data?.logo_path"
+    [title]="data?.title"
+    [titleAr]="data?.title_ar"
   ></app-header>
   <div class="theApp-main">
     <app-best-clean
@@ -23,10 +23,14 @@
       [rightSectionDescripitonAr]="data?.right_section_descripiton_ar"
       [fontColor]="data?.font_color"
     ></app-our>
-    <app-cleaning-services
-      [services]="data?.services"
-      [fontColor]="data?.font_color"
-    ></app-cleaning-services>
+    <app-home-images
+      *ngIf="data?.images"
+      [images]="data?.images"
+      [firstSectionTitle]="data?.first_section_title"
+      [firstSectionTitleAr]="data?.first_section_title_ar"
+      [firstSectionDescription]="data?.first_section_description"
+      [firstSectionDescriptionAr]="data?.first_section_description_ar"
+    ></app-home-images>
     <app-stories
       *ngIf="stories"
       [stories]="stories"
@@ -37,11 +41,12 @@
       [reviews]="data?.reviews"
     >
     </app-reviews>
-    <app-home-images
-      *ngIf="data?.images"
-      [images]="data?.images"
-    ></app-home-images>
+    <app-cleaning-services
+      [services]="data?.services"
+      [fontColor]="data?.font_color"
+    ></app-cleaning-services>
     <app-home-videos
+      *ngIf="data?.videos"
       [videos]="data?.videos"
     >
     </app-home-videos>
@@ -50,23 +55,18 @@
     >
     </app-contact-us>
     <app-footer
-      [footerLogoPath]="data?.footer_logo_path"
-      [footerTitle]="data?.footer_title"
-      [footerDescription]="data?.footer_description"
-      [footerTitleAr]="data?.footer_title_ar"
-      [footerDescriptionAr]="data?.footer_description_ar"
       [footerIcons]="data?.footer_icons"
       [fontColor]="data?.font_color"
     ></app-footer>
     <ul class="theApp-main-icons">
       <li>
         <a href="https://wa.me/your-phone-number" title="whatsapp">
-          <svg-icon src="assets/icons/whatsapp.svg" class="fs-lg"></svg-icon>
+          <svg-icon src="assets/icons/whatsapp.svg" class="fs-xl"></svg-icon>
         </a>
       </li>
       <li>
         <a href="tel:your-phone-number" title="phone">
-          <svg-icon src="assets/icons/phone.svg" class="fs-lg"></svg-icon>
+          <svg-icon src="assets/icons/phone.svg" class="fs-xl"></svg-icon>
         </a>
       </li>
     </ul>

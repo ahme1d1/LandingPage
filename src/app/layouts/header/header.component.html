@@ -1,17 +1,14 @@
 <header class="theHeader" [ngStyle]="{ 'background-color': navbarColor }">
-  <div class="theHeader-container ">
+  <div class="theHeader-container">
     <ul class="theHeader-nav w-100 m-0 justify-content-between" style="border: 2px solid #5eacc0;">
       <li class="border-right">
         <a routerLink="/" target="_blank" class="theHeader__icons">
           <img
-            [src]="footerLogoPath | urlPrefix"
-            alt="Icon"
-            width="40"
-            height="40"
-            style="object-fit: cover;"
+            [src]="logoPath | urlPrefix"
+            alt="Logo"
           >
           <span class="text-center" [ngStyle]="{ color: fontColor }" style="white-space: nowrap;">
-            {{currentLang == 'en' ? footerTitle : footerTitleAr}}
+            {{currentLang == 'en' ? title : titleAr}}
           </span>
         </a>
       </li>
@@ -20,10 +17,6 @@
           <img
             [src]="icon?.img_path | urlPrefix"
             alt="Icon"
-            width="40"
-            height="40"
-            class="icon"
-            style="object-fit: cover;"
           >
           <span class="text-center" [ngStyle]="{ color: fontColor }">
             {{currentLang == 'en' ? icon?.title : icon?.title_ar}}

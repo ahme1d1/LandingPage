@@ -25,13 +25,13 @@
     width: 100%;
     z-index: 999999;
     li {
-      padding: rem(30px);
+      padding: rem(40px);
       width: rem(60px);
       height: rem(60px);
       @include media-breakpoint-down(sm) {
-        padding: rem(20px);
-        width: rem(30px);
-        height: rem(30px);
+        padding: rem(25px);
+        width: rem(50px);
+        height: rem(50px);
       }
       display: flex;
       justify-content: center;

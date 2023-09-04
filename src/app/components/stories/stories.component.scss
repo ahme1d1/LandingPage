@@ -1,3 +1,10 @@
-.slider-image-main {
+@import "src/assets/style/global";
+
+.story {
+  width: 100%;
+  // height: rem(400px);
+  // @include media-breakpoint-down(sm) {
+  //   height: rem(400px);
+  // }
   aspect-ratio: (6/9);
 }

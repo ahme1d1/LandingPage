@@ -66,15 +66,21 @@
     justify-content: center;
     @include media-breakpoint-down(md) {
       flex-direction: column;
-      img {
-        width: 30px !important;
-        height: 30px !important;
+    }
+    img {
+      object-fit: cover;
+      width: rem(35px);
+      height: rem(35px);
+      @include media-breakpoint-down(sm) {
+        width: rem(20px);
+        height: rem(20px);
       }
     }
     span {
       margin-left: 8px;
       @include media-breakpoint-down(md) {
         margin-left: 0px;
+        margin-top: 5px;
       }
     }
   }
@@ -119,14 +125,5 @@
   span , span i
   {
     font-size: 9px;
-  }
-}
-
-.icon {
-  width: rem(40px);
-  height: rem(40px);
-  @include media-breakpoint-down(sm) {
-    width: rem(30px);
-    height: rem(30px);
   }
 }
