@@ -7,9 +7,9 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class AppService {
-  private apiUrl = 'https://graph.facebook.com/v17.0';
-  private clientId = '848734893345298';
-  private clientSecret = '4d12d9fa7413096367b07a3f4300602a';
+  private apiUrl = 'https://graph.facebook.com/v18.0';
+  private clientId = '1032352614616217';
+  private clientSecret = '4a41518004854a43bc536f919ffef93e';
 
   constructor(private http: HttpClient) { }
 
@@ -22,7 +22,7 @@ export class AppService {
       .set('grant_type', 'fb_exchange_token')
       .set('client_id', this.clientId)
       .set('client_secret', this.clientSecret)
-      .set('fb_exchange_token', "EAAMD633TihIBOzqHhAt83OP60h0LgrWXPBQDIgyFScbtzMr346oUnoNsNBZCt8ZAbzevsnPPy4wohKRDAUkyWoUsCOl3TRIykcfadawMu4Uam3vL6WPx8ySccYAFe8b1mCZB8ZC4vpHaZCud6oyZC9bwaxs2yiXwjuV1M4c8AIFvAOn5wl3fpmoQk3");
+      .set('fb_exchange_token', "EAAOq61LgjJkBO05RJAZAkUCbPcr0TmPZC0q3dUfnmFqGQ7k9QjfVgE3X57UOaswOnnI1QIwwft1gw0yH35xYZBTpzThN66nAfpkaRmvH1l5ZBBbNdnj5AaARv9DWnXdnHvUeKZCM0NJDZBjQ2OT8XPrxBT2TO1cg3y6yZASfMIZAzH62Sx1wmlucRESx");
 
     return this.http.get(`${this.apiUrl}/oauth/access_token`, { params });
   }
@@ -40,8 +40,8 @@ export class AppService {
   // }
 
   getUserReels(): Observable<any> {
-    const shortLivedAccessToken = 'EAAMD633TihIBO4EA6uLToZCfhKLq1btRLHywgSluUgGYYZBMnBFaCwkDVi2taATJ7VLIZAsXF2b4ZAGczZAPlbKICyRy0caAOAPTZCCwczp9s2h6UYNdqww2E6J58RA5Emg9MpnF5gtPtxLMVpEBS1FHKjiJZAgAGQ7n4xkLOeGuomdcP2vIFXiF10TEzrsFNQ3kAOidgrGl5FKL5u7hYZAbghGZAcpIZD';
-    const userId = '17841459270874529'; // Replace with your Instagram business account ID
+    const shortLivedAccessToken = 'EAAOq61LgjJkBO41ZCHvwHZCJZASbA3rlXiGXEjJvVQkfQtdymQrky759fLaOyfEmj7g2dwiKtlDXoPAItHAM55FQKHyNrdZCsPdKcLZBfCD0hXpZAKTDdJYiSLWWj5ws6feRZBbk78ApVYwGxh6E5YBTXE4fxJZC5SZBq7HVm7wJHNI7hCyk5OkyN2KV20n5yOSilpsxnpDnXvrNdsEAQ3tZCUY8Ufet5H';
+    const userId = '17841414859636830'; // Replace with your Instagram business account ID
     const fields = 'id,media_type,media_url,thumbnail_url,permalink,timestamp,caption';
 
     return this.exchangeShortTokenForLongToken(shortLivedAccessToken).pipe(

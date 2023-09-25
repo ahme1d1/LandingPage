@@ -38,7 +38,9 @@ export class StoriesComponent implements OnInit {
 
   constructor(private translateService: TranslateService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.stories)
+  }
 
   get currentLang(): string {
     return this.translateService.getDefaultLang();
